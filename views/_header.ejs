@@ -1,0 +1,53 @@
+<!-- <header>
+  <nav class="navbar">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="/">Welcome!!!</a>
+      <% if(locals.user) { %>
+      <a class="navbar-brand" href="/profile">Profile</a>
+      <%}%>
+
+      <form class="d-flex">
+        <a class="navbar-brand" href="/dashboard">Dashboard</a>
+        <a class="navbar-brand" href="/student/add-student">Add New Student</a>
+        <a class="navbar-brand" href="/interview/add-interview">Add Interview</a>
+        <a class="navbar-brand" href="/download">Report</a>
+        <a class="navbar-brand" href="/sign-out">Logout</a>
+      </form>
+    </div>
+  </nav>
+</header> -->
+
+
+
+  <nav>
+    <ul class="normal">
+
+      <li class="nav-links">
+        <a class="active" href="/dashboard">Dashboard</a>
+      </li>
+
+      <li class="nav-links">
+        <a class="navbar-brand" href="/student/add-student">Add New Student</a>
+      </li>
+
+      <% if(locals.user) { %>
+        <li class="nav-links">
+          <a class="navbar-brand" href="/profile">Profile</a>
+        </li>
+      <% } %>
+
+      <li class="nav-links">
+        <a class="navbar-brand" href="/interview/add-interview">Add Interview</a>
+      </li>
+
+      <li class="nav-links">
+        <a class="navbar-brand" href="/download">Report</a>
+      </li>
+
+      <li class="nav-links">
+        <a class="navbar-brand" href="/sign-out">Logout</a>
+      </li>
+
+    </ul>
+  </nav>
+
