@@ -1,14 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
-      crossorigin="anonymous"
-    />
+    <link rel="stylesheet" href="/css/header.css">
+    <link rel="stylesheet" href="/css/add_new_student.css">
     <title><%= title %></title>
   </head>
 
@@ -17,17 +11,16 @@
     <%- include('_header') %>
 
     <% if (locals.user) {%>
-      <div class="container mt-4 col-md-4">
-      <h4>Edit student details</h4>
+      <div class="add-student">
+      <h2>Edit Student Details</h2>
     
-      <form class="row g-3 mt-1 border border-dark rounded p-2" 
-       style="--bs-border-opacity: 0.5" action="/student/update/<%= student_details.id %>" method="POST">
+      <form action="/student/update/<%= student_details.id %>" class="form-style" method="POST">
     
-        <div class="col-12">
-          <label for="name" class="form-label">Name</label>
+        <div class="form-control">
+          <label for="name" class="form-label">Name : </label>
           <input
             type="text"
-            class="form-control"
+            class="login-form-input"
             placeholder="Enter student name"
             id="name"
             name="name"
@@ -36,11 +29,11 @@
           />
         </div>
     
-        <div class="col-12">
-          <label for="college" class="form-label">college</label>
+        <div class="form-control">
+          <label for="college" class="form-label">College : </label>
           <input
             type="text"
-            class="form-control"
+            class="login-form-input"
             placeholder="Enter student college"
             id="college"
             name="college"
@@ -49,38 +42,38 @@
           />
         </div>
     
-        <div class="col-md-6">
-            <label for="placement-status" class="form-label">Placement status</label>
+        <div class="form-control">
+            <label for="placement-status" class="form-label">Placement :   </label>
             <select id="placement-status" class="form-select" required name="placementStatus">
                 <option selected>Not placed</option>
                 <option>Placed</option>
             </select>
         </div>
     
-        <div class="col-md-6">
-            <label for="batch" class="form-label">Batch</label>
-            <input type="text" class="form-control" id="batch" placeholder="Enter batch no." name="batch" value="<%= student_details.batch %>" required/>
+        <div class="form-control">
+            <label for="batch" class="form-label">Batch : <label>
+            <input type="text" class="login-form-input" id="batch" placeholder="Enter batch no." name="batch" value="<%= student_details.batch %>" required/>
         </div>
     
-        <div class="col-md-4">
-          <label for="dsa-score" class="form-label">DSA score</label>
-          <input type="text" class="form-control" id="dsa-score" name="dsa_score" value="<%= student_details.dsa_score %>" required/>
-        </div>
-    
-        
-        <div class="col-md-4">
-          <label for="webdev-score" class="form-label">WebDev score</label>
-          <input type="text" class="form-control" id="webdev-score" name="webdev_score" value="<%= student_details.webdev_score %>"required/>
+        <div class="form-control">
+          <label for="dsa-score" class="form-label">DSA Score : </label>
+          <input type="text" class="login-form-input" id="dsa-score" name="dsa_score" value="<%= student_details.dsa_score %>" required/>
         </div>
     
         
-        <div class="col-md-4">
-          <label for="react-score" class="form-label">React score</label>
-          <input type="text" class="form-control" id="react-score" name="react_score" value="<%= student_details.react_score %>"required/>
+        <div class="form-control">
+          <label for="webdev-score" class="form-label">WebDev Score : </label>
+          <input type="text" class="login-form-input"  id="webdev-score" name="webdev_score" value="<%= student_details.webdev_score %>"required/>
+        </div>
+    
+        
+        <div class="form-control">
+          <label for="react-score" class="form-label">React Score : </label>
+          <input type="text" class="login-form-input" id="react-score" name="react_score" value="<%= student_details.react_score %>"required/>
         </div>    
         
-        <div class="col-12 ">
-          <button type="submit" class="btn btn-primary">Update</button>
+        <div>
+          <button type="submit" class="login-button" >Update</button>
         </div>
     
       </form>
